@@ -1,0 +1,47 @@
+---
+interface Props {
+	title: string;
+}
+
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from 'astro:transitions';
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Joel's SI Wiki" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+	<body class="bg-zinc-200">
+		<div id="desktop" class="md:flex w-full">
+			<div
+				class="md:w-[625px] w-[335px] m-auto flex flex-col pb-10 md:pt-4"
+			>
+				<div class="pb-8 pt-6">
+					<div class="flex pb-8 place-content-center">
+						<a href="/"
+							><span
+								class="text-3xl font-semibold bg-red-300 rounded-md p-3"
+								>Joel's SI</span
+							></a
+						>
+					</div>
+					<div class="flex place-content-center"><Navbar /></div>
+				</div>
+				<div class="prose">
+					<slot />
+				</div>
+				<Footer />
+			</div>
+		</div>
+	</body>
+</html>
