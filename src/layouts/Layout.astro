@@ -1,0 +1,31 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Return from "../components/Return.astro";
+import { ViewTransitions } from "astro:transitions";
+import { site_title, site_description } from "../constants.js";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={site_description} />
+    <meta property="og:description" content={site_description} />
+    <meta property="og:image" content="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content={site_title} />
+    <title>CPSC SI Hub 🚀</title>
+    <ViewTransitions />
+  </head>
+  <body class="bg-primary pt-8 md:pt-12 grid place-items-center space-y-12">
+    <Navbar />
+    <main class="text-text px-6 md:px-0 w-screen max-w-lg">
+      <slot />
+      <Return />
+    </main>
+    <Footer />
+  </body>
+</html>

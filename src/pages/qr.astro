@@ -1,0 +1,25 @@
+---
+import { ViewTransitions } from "astro:transitions";
+const site_description = "Page containing session info, resources, and more.";
+const title = "Attendance QR";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={site_description} />
+    <meta property="og:description" content={site_description} />
+    <meta property="og:image" content="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content={title} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+
+  <body>
+    <img class="w-[650px]" src="/qr.png" alt="attendance qr code" />
+  </body>
+</html>

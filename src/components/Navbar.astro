@@ -1,0 +1,35 @@
+---
+const pages: { [key: string]: string } = {
+  "/": "Home",
+  "/sessions": "Sessions",
+  "/resources": "Resources",
+};
+---
+
+<div class="flex flex-col md:flex-row md:flex-nowrap">
+  <h1 class="pb-6 md:pb-0 text-center">
+    <a
+      href="/"
+      class="text-5xl md:text-4xl md:pr-20 text-text font-semibold hover:text-text-primary"
+      >SI Hub 🚀</a
+    >
+  </h1>
+
+  <div
+    class="flex flex-row md:place-items-center md:flex-nowrap text-text-primary space-x-10 md:space-x-5"
+  >
+    {
+      Object.keys(pages).map((pg) => {
+        if (Astro.url.pathname === pg) {
+          return (
+            <a class="active font-semibold" href="#">
+              {pages[pg]}
+            </a>
+          );
+        } else {
+          return <a href={pg}>{pages[pg]}</a>;
+        }
+      })
+    }
+  </div>
+</div>

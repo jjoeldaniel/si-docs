@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Ashley Chan",
+    "course": "CPSC 120",
+    "days": "Monday, Wednesday",
+    "time": "12:45 - 2:00 PM",
+    "location": "E 321",
+    "zoom": "null",
+    "discord": "null"
+  },
+  {
+    "name": "Joel Daniel Rico",
+    "course": "CPSC 121",
+    "days": "Tuesday, Thursday",
+    "time": "4:00 - 5:15 PM",
+    "location": "PLS 255",
+    "zoom": "null",
+    "discord": "null"
+  },
+  {
+    "name": "Joel Daniel Rico",
+    "course": "CPSC 131",
+    "days": "Tuesday, Thursday",
+    "time": "10:00 - 11:15 AM",
+    "location": "PLS 255",
+    "zoom": "null",
+    "discord": "null"
+  },
+  {
+    "name": "Randy Do",
+    "course": "CPSC 121",
+    "days": "Tuesday, Thursday",
+    "time": "2:30 - 3:45 PM",
+    "location": "CS 110A",
+    "zoom": "null",
+    "discord": "null"
+  },
+  {
+    "name": "Dane Camacho",
+    "course": "CPSC 121",
+    "days": "Tuesday, Thursday",
+    "time": "2:30 - 3:45 PM",
+    "location": "CS 110B",
+    "zoom": "null",
+    "discord": "null"
+  },
+  {
+    "name": "Alejandro Ramos",
+    "course": "CPSC 131",
+    "days": "Monday, Wednesday",
+    "time": "12:00 - 1:15 PM",
+    "location": "CP 130",
+    "zoom": "null",
+    "discord": "null"
+  },
+  {
+    "name": "Samuel Kim",
+    "course": "CPSC 120",
+    "days": "Monday, Wednesday",
+    "time": "4:30 - 5:45 PM",
+    "location": "CS 102B",
+    "zoom": "null",
+    "discord": "null"
+  }
+]
