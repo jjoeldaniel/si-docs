@@ -1,13 +1,9 @@
 ---
-interface Props {
-	title: string;
-}
-
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import { ViewTransitions } from 'astro:transitions';
 
-const { title } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
 <!doctype html>
@@ -18,7 +14,7 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{frontmatter.title}</title>
 		<ViewTransitions />
 	</head>
 	<body class="bg-zinc-200">
