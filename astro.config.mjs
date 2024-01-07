@@ -1,10 +1,11 @@
 import { defineConfig } from 'astro/config';
 
+import svelte from '@astrojs/svelte';
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()],
+  integrations: [tailwind(), svelte()],
   redirects: {
     '/slides': 'https://drive.google.com/drive/folders/1Qt2_OE9aRGxcmlrHw7pti_prOOVVqyoG?usp=drive_link',
     '/zoom': 'https://fullerton.zoom.us/j/8821208101',
