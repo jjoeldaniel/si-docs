@@ -6,10 +6,7 @@
   let currentSI: String | null = null;
 
   function changeSI(event: any) {
-    const si = event.target.innerText;
-    if (si === currentSI) return;
-
-    currentSI = si;
+    currentSI = event.target.innerText;
 
     const ids = ["name", "days", "time", "location", "zoom", "discord"];
 
@@ -28,11 +25,18 @@
           }
         } else el.innerText = data.get(si)[id];
       }
+
+      /*
+       FIXME: This is a hacky way to close the dropdown.
+
+       This works, but you have to click twice to open the dropdown again.
+       It kinda bugs out sometimes too.
+       */
+      const dropdown = document.getElementById("dropdown");
+      if (dropdown) dropdown.classList.add("hidden");
     }
   }
 </script>
-
-<!-- TODO: Close dropdown on name click -->
 
 <button
   id="dropdownDefaultButton"
