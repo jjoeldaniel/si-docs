@@ -1,6 +1,6 @@
 ---
 import Page from "../layouts/Page.astro";
-import SI_Dropdown from "../components/SI_Dropdown.svelte";
+import SI_Display from "../components/SI_Display.svelte";
 import json from "../data.json";
 import { SI_Leader } from "../si.js";
 
@@ -16,33 +16,5 @@ const leaders: Map<String, SI_Leader> = (() => {
 <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
 
 <Page title="Sessions">
-  <!-- TODO: Add SI Selection that modifies data below -->
-
-  <SI_Dropdown client:load names={Array.from(leaders.keys())} />
-
-  <div>
-    <h1 class="text-2xl font-bold mb-4">Information</h1>
-
-    <ul class="list-disc pl-6 mb-6">
-      <li><strong>SI Leader:</strong> TBD</li>
-      <li><strong>Days:</strong> TBD</li>
-      <li><strong>Time:</strong> TBD</li>
-      <li><strong>Location:</strong> TBD</li>
-      <li>
-        <a href="#" target="_blank" class="text-blue-500">Zoom Meeting</a>
-      </li>
-      <li>
-        <a href="#" target="_blank" class="text-blue-500">Class Discord</a>
-      </li>
-    </ul>
-
-    <h1 class="text-2xl font-bold mb-4">Useful Links</h1>
-
-    <ul class="list-disc pl-6">
-      <li><a href="/qr" class="text-blue-500">Attendance QR Code</a></li>
-      <li>
-        <a href="/map" target="_blank" class="text-blue-500">Campus Map</a>
-      </li>
-    </ul>
-  </div>
+  <SI_Display client:load data={leaders} names={Array.from(leaders.keys())} />
 </Page>
