@@ -1,6 +1,5 @@
 ---
 import Page from "../layouts/Page.astro";
-import SI_Display from "../components/SI_Display.svelte";
 import json from "../data.json";
 import { SI_Leader } from "../si.js";
 
@@ -11,10 +10,83 @@ const leaders: Map<String, SI_Leader> = (() => {
   }
   return map;
 })();
+const leaderNames = Array.from(leaders.keys());
+
+const isValidUrl = (urlString: string | undefined)=> {
+  if (urlString == undefined) return false;
+
+  var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol
+  '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // validate domain name
+  '((\\d{1,3}\\.){3}\\d{1,3}))'+ // validate OR ip (v4) address
+  '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // validate port and path
+  '(\\?[;&a-z\\d%_.~+=-]*)?'+ // validate query string
+  '(\\#[-a-z\\d_]*)?$','i'); // validate fragment locator
+
+  return !!urlPattern.test(urlString);
+}
+
 ---
 
 <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
 
 <Page title="Sessions">
-  <SI_Display client:load data={leaders} names={Array.from(leaders.keys())} />
+  <p class="mb-10">
+    Listed below are all SI Leaders, their session days, times, and locations.
+  </p>
+
+  <div>
+    <h1 class="text-2xl font-bold mb-6">Leaders</h1>
+
+    <!-- display all leaders -->
+    <ul class="mb-6">
+      {
+        Object.keys(leaderNames).map((i) => (
+          <li>
+            <a href={"#"+leaderNames[i]} class="text-blue-500">
+              {leaderNames[i]}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    {
+      Object.keys(leaderNames).map((i) => (
+        <h4 id={leaderNames[i]} class="text-lg mb-4 font-medium">{leaderNames[i]}</h4>
+
+        <ul class="list-disc pl-6 mb-6 space-y-3">
+          <li><strong>Days:</strong> <span id="days">{leaders.get(leaderNames[i])?.days}</span></li>
+          <li><strong>Time:</strong> <span id="time">TBD</span></li>
+          <li><strong>Location:</strong> <span id="location">TBD</span></li>
+          {
+            isValidUrl(leaders.get(leaderNames[i])?.zoom) ?
+            <li>
+              <!-- svelte-ignore a11y-invalid-attribute -->
+              <a id="zoom" href={leaders.get(leaderNames[i])?.zoom} class="text-blue-500">Zoom Meeting</a>
+            </li>
+            : null
+          }
+          {
+            leaders.get(leaderNames[i])?.discord != "null" ?
+            <li>
+              <!-- svelte-ignore a11y-invalid-attribute -->
+              <a id="discord" href={leaders.get(leaderNames[i])?.discord} class="text-blue-500"
+                >Class Discord</a
+              >
+            </li>
+            : null
+          }
+          </ul>
+        ))
+    }
+
+    <h1 class="text-2xl font-bold mb-4">Useful Links</h1>
+
+    <ul class="list-disc pl-6">
+      <li><a href="/qr" class="text-blue-500">Attendance QR Code</a></li>
+      <li>
+        <a href="/map" target="_blank" class="text-blue-500">Campus Map</a>
+      </li>
+    </ul>
+  </div>
 </Page>
