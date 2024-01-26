@@ -56,8 +56,8 @@ const isValidUrl = (urlString: string | undefined)=> {
 
         <ul class="list-disc pl-6 mb-6 space-y-3">
           <li><strong>Days:</strong> <span id="days">{leaders.get(leaderNames[i])?.days}</span></li>
-          <li><strong>Time:</strong> <span id="time">TBD</span></li>
-          <li><strong>Location:</strong> <span id="location">TBD</span></li>
+          <li><strong>Time:</strong> <span id="time">{leaders.get(leaderNames[i])?.time}</span></li>
+          <li><strong>Location:</strong> <span id="location">{leaders.get(leaderNames[i])?.location}</span></li>
           {
             isValidUrl(leaders.get(leaderNames[i])?.zoom) ?
             <li>
