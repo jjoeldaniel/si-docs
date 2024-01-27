@@ -52,5 +52,14 @@
     "location": "CP 130",
     "zoom": "null",
     "discord": "null"
+  },
+  {
+    "name": "Samuel Kim",
+    "course": "CPSC 120",
+    "days": "Monday, Wednesday",
+    "time": "4:30 - 5:45 PM",
+    "location": "CS 102B",
+    "zoom": "null",
+    "discord": "null"
   }
 ]
