@@ -5,31 +5,57 @@ import Page from "../layouts/Page.astro";
 <Page title="Resources">
   <div class="space-y-8">
     <p>
-      Here are some resources you might find useful throughout your time at
-      CSUF.
+      I've compiled a list of resources that I've found helpful throughout my
+      time as an SI Leader. I hope you find them helpful too!
     </p>
 
-    <ul class="space-y-3 list-inside">
+    <ul class="space-y-3 list-disc list-inside">
       <li>
-        > <a class="hover:text-text-primary" href="https://neetcode.io"
-          >NeetCode</a>
-      </li>
-      <li>
-        > <a
-          class="hover:text-text-primary"
-          href="https://www.bigocheatsheet.com/">Big-O Cheat Sheet</a>
-      </li>
-      <li>
-        >
         <a
-          class="hover:text-text-primary"
-          href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh"
-          >How to Setup SSH</a
+          href="https://www.youtube.com/user/CS50TV"
+          class="font-bold hover:text-text-primary">CS50 on YouTube</a
         >
+        - Harvard's Introduction to Computer Science course. It's a great resource
+        for learning the basics of programming.
       </li>
       <li>
-        > <a class="hover:text-text-primary" href="https://www.learncpp.com/"
-          >Learn C++</a>
+        <a
+          href="https://www.khanacademy.org/computing/computer-programming"
+          class="font-bold hover:text-text-primary">Khan Academy</a
+        >
+        - Khan Academy's computer programming course. It's a great resource for learning
+        the basics of programming.
+      </li>
+      <li>
+        <a
+          href="https://www.bigocheatsheet.com/"
+          class="font-bold hover:text-text-primary">Big O Cheat Sheet</a
+        >
+        - A great resource for understanding Big O notation and algorithm complexity.
+        <li>
+          <a
+            href="https://www.codecademy.com/"
+            class="font-bold hover:text-text-primary">Codecademy</a
+          >
+          - A great resource for learning to code interactively.
+        </li>
+      </li>
+      <!-- leetcode with neetcode nested inside -->
+      <li>
+        <a
+          href="https://leetcode.com/"
+          class="font-bold hover:text-text-primary">LeetCode</a
+        >
+        - A great resource for practicing coding interview questions.
+        <ul class="list-disc list-inside indent-6 mt-2">
+          <li>
+            <a
+              href="https://neetcode.io"
+              class="font-bold hover:text-text-primary">NeetCode</a
+            >
+            - Provides detailed explanations for LeetCode problems.
+          </li>
+        </ul>
       </li>
     </ul>
   </div>

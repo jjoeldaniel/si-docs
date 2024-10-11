@@ -1,3 +1,3 @@
-export const site_title = "CPSC SI Hub";
+export const site_title = "Joel's SI Hub";
 export const site_description =
-  "Computer Science SI Hub containing SI Leader session times, contact information, and more.";
+  "Joel's SI Hub is the place to find all the information you need about CPSC SI sessions.";

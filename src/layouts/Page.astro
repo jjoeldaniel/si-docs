@@ -1,13 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { site_title } from "../constants.js";
 const { title } = Astro.props;
 ---
 
-<title>SI Hub - {title} 🚀</title>
+<title>{site_title} - {title} 🚀</title>
 
 <Layout>
   <div>
-    <h1 class="font-medium text-4xl pb-8"><a href="#">{title}</a></h1>
+    <h1 class="font-bold hover:text-text-primary text-4xl pb-8">
+      <a href="#">{title}</a>
+    </h1>
     <slot />
   </div>
 </Layout>
